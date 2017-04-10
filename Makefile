@@ -57,9 +57,11 @@ format: $(SRC) $(DEPS)
 clean:
 	@echo
 	rm -rf $(PROGRAM) $(OBJ) $(OBJ_DIR)
-	rm -rf isodir
+	rm -rf isodir myos.iso
 	@echo
 
+###################################
+# Commands this Makefile runs:
 #i686-elf-as boot.s -o boot.o
 #i686-elf-gcc -c kernel.c -o kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 #i686-elf-gcc -T linker.ld -o myos.bin -ffreestanding -O2 -nostdlib boot.o kernel.o -lgcc
@@ -72,4 +74,4 @@ clean:
 #
 #qemu-system-i386 -cdrom myos.iso
 #qemu-system-i386 -kernel myos.bin
-
+###################################
